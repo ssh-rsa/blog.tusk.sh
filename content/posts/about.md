@@ -7,6 +7,5 @@ tags = ["about me"]
 showFullContent = true
 readingTime = false
 hideComments = false
-draft = true
 +++
 
