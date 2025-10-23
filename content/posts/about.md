@@ -9,3 +9,5 @@ readingTime = false
 hideComments = false
 +++
 
+{{< image src="/images/ema_selfie.jpg" alt="A selfie!" position="center" style="border-radius: 8px; width: 50%; height: auto;" >}}
+Hi, I'm Ema!
