@@ -13,7 +13,7 @@
       <link>http://localhost:1313/posts/about/</link>
       <pubDate>Thu, 23 Oct 2025 19:26:48 -0400</pubDate>
       <guid>http://localhost:1313/posts/about/</guid>
-      <description>&lt;p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/hello.png&#34;  alt=&#34;A selfie!&#34;  class=&#34;center&#34;  style=&#34;border-radius: 8px;&#34;    /&gt;&#xA;&#xA;&#xA;Hi, I&amp;rsquo;m Ema!&lt;/p&gt;</description>
+      <description>&lt;p&gt;&#xA;&lt;img src=&#34;http://localhost:1313/images/ema_selfie.jpg&#34;  alt=&#34;A selfie!&#34;  class=&#34;center&#34;  style=&#34;border-radius: 8px; width: 50%; height: auto;&#34;    /&gt;&#xA;&#xA;&#xA;Hi, I&amp;rsquo;m Ema!&lt;/p&gt;&#xA;&lt;p&gt;I&amp;rsquo;m a Security Engineer from the greater Boston area, and I like to talk about lots of things.  I plan on mainly using this blog for:&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;Write-ups for tech projects I do&lt;/li&gt;&#xA;&lt;li&gt;Random Journal entries&lt;/li&gt;&#xA;&lt;li&gt;DJ Mixes/Music posting&lt;/li&gt;&#xA;&lt;li&gt;Anything else I feel like really! Maybe a recipe now and then.&lt;/li&gt;&#xA;&lt;/ul&gt;&#xA;&lt;p&gt;Welcome to my blog! you can find more about me at my &lt;a href=&#34;https://tusk.sh&#34;&gt;HomePage&lt;/a&gt;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>
