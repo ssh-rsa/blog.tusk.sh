@@ -6,8 +6,8 @@
   
   <meta http-equiv="content-type" content="text/html; charset=utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="description" content="poopoo #test!
-" />
+<meta name="description" content="Look at this cool code!!!
+#cloud-config # Disable password authentication for SSH ssh_pwauth: false # Create users users: - name: ema gecos: Ema User sudo: ALL=(ALL) ALL groups: users, sudo shell: /bin/bash lock_passwd: false passwd: #HAshed password here ssh_authorized_keys: - &#34;ssh-pubkey-here&#34; - name: apps groups: users, docker shell: /bin/bash lock_passwd: false passwd: # your hashed password here # Configure SSH daemon write_files: - path: /etc/ssh/sshd_config.d/99-custom.conf content: | # Custom SSH configuration PasswordAuthentication no ChallengeResponseAuthentication no UsePAM yes PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys permissions: &#39;0644&#39; # Restart SSH service to apply configuration changes runcmd: - sed -i &#39;s/#PermitRootLogin yes/PermitRootLogin no/&#39; /etc/ssh/sshd_config - sed -i &#39;s/PermitRootLogin yes/PermitRootLogin no/&#39; /etc/ssh/sshd_config - sed -i &#39;s/#PermitRootLogin prohibit-password/PermitRootLogin no/&#39; /etc/ssh/sshd_config - sed -i &#39;s/PermitRootLogin prohibit-password/PermitRootLogin no/&#39; /etc/ssh/sshd_config - sed -i &#39;s/#PasswordAuthentication yes/PasswordAuthentication no&#39; /etc/ssh/sshd_config - sed -i &#39;s/PasswordAuthentication yes/PasswordAuthentication no&#39; /etc/ssh/sshd_config - sed -i &#39;s/#Port 22/Port 2222/&#39; /etc/ssh/sshd_config - systemctl restart sshd - systemctl enable sshd package_update: true package_upgrade: true # Reboot after package upgrades power_state: mode: reboot message: &#34;Rebooting after package upgrades&#34; " />
 <meta name="keywords" content=", " />
 
   <meta name="robots" content="noodp" />
@@ -79,8 +79,8 @@
 <meta property="og:locale" content="en" />
 <meta property="og:type" content="article" />
 <meta property="og:title" content="Basic Cloud Init">
-<meta property="og:description" content="poopoo #test!
-" />
+<meta property="og:description" content="Look at this cool code!!!
+#cloud-config # Disable password authentication for SSH ssh_pwauth: false # Create users users: - name: ema gecos: Ema User sudo: ALL=(ALL) ALL groups: users, sudo shell: /bin/bash lock_passwd: false passwd: #HAshed password here ssh_authorized_keys: - &#34;ssh-pubkey-here&#34; - name: apps groups: users, docker shell: /bin/bash lock_passwd: false passwd: # your hashed password here # Configure SSH daemon write_files: - path: /etc/ssh/sshd_config.d/99-custom.conf content: | # Custom SSH configuration PasswordAuthentication no ChallengeResponseAuthentication no UsePAM yes PubkeyAuthentication yes AuthorizedKeysFile .ssh/authorized_keys permissions: &#39;0644&#39; # Restart SSH service to apply configuration changes runcmd: - sed -i &#39;s/#PermitRootLogin yes/PermitRootLogin no/&#39; /etc/ssh/sshd_config - sed -i &#39;s/PermitRootLogin yes/PermitRootLogin no/&#39; /etc/ssh/sshd_config - sed -i &#39;s/#PermitRootLogin prohibit-password/PermitRootLogin no/&#39; /etc/ssh/sshd_config - sed -i &#39;s/PermitRootLogin prohibit-password/PermitRootLogin no/&#39; /etc/ssh/sshd_config - sed -i &#39;s/#PasswordAuthentication yes/PasswordAuthentication no&#39; /etc/ssh/sshd_config - sed -i &#39;s/PasswordAuthentication yes/PasswordAuthentication no&#39; /etc/ssh/sshd_config - sed -i &#39;s/#Port 22/Port 2222/&#39; /etc/ssh/sshd_config - systemctl restart sshd - systemctl enable sshd package_update: true package_upgrade: true # Reboot after package upgrades power_state: mode: reboot message: &#34;Rebooting after package upgrades&#34; " />
 <meta property="og:url" content="http://localhost:1313/posts/2025/11/basic-cloud-init/" />
 <meta property="og:site_name" content="Ema&#39;s Blog" />
 
@@ -180,9 +180,63 @@
   
 
   <div class="post-content"><div>
-        <p>poopoo
-#test!</p>
-
+        <p>Look at this cool code!!!</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-yaml" data-lang="yaml"><span class="line"><span class="cl"><span class="c">#cloud-config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Disable password authentication for SSH</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">ssh_pwauth</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Create users</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">users</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">ema</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">gecos</span><span class="p">:</span><span class="w"> </span><span class="l">Ema User</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">sudo</span><span class="p">:</span><span class="w"> </span><span class="l">ALL=(ALL) ALL</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">groups</span><span class="p">:</span><span class="w"> </span><span class="l">users, sudo</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l">/bin/bash</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lock_passwd</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">passwd</span><span class="p">:</span><span class="w"> </span><span class="c">#HAshed password here</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">ssh_authorized_keys</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">      </span>- <span class="s2">&#34;ssh-pubkey-here&#34;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l">apps</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">groups</span><span class="p">:</span><span class="w"> </span><span class="l">users, docker</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">shell</span><span class="p">:</span><span class="w"> </span><span class="l">/bin/bash</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">lock_passwd</span><span class="p">:</span><span class="w"> </span><span class="kc">false</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">passwd</span><span class="p">:</span><span class="w"> </span><span class="c"># your hashed password here</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Configure SSH daemon</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">write_files</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="nt">path</span><span class="p">:</span><span class="w"> </span><span class="l">/etc/ssh/sshd_config.d/99-custom.conf</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">content</span><span class="p">:</span><span class="w"> </span><span class="p">|</span><span class="sd">
+</span></span></span><span class="line"><span class="cl"><span class="sd">      # Custom SSH configuration
+</span></span></span><span class="line"><span class="cl"><span class="sd">      PasswordAuthentication no
+</span></span></span><span class="line"><span class="cl"><span class="sd">      ChallengeResponseAuthentication no
+</span></span></span><span class="line"><span class="cl"><span class="sd">      UsePAM yes
+</span></span></span><span class="line"><span class="cl"><span class="sd">      PubkeyAuthentication yes
+</span></span></span><span class="line"><span class="cl"><span class="sd">      AuthorizedKeysFile .ssh/authorized_keys</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">    </span><span class="nt">permissions</span><span class="p">:</span><span class="w"> </span><span class="s1">&#39;0644&#39;</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Restart SSH service to apply configuration changes</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">runcmd</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">sed -i &#39;s/#PermitRootLogin yes/PermitRootLogin no/&#39; /etc/ssh/sshd_config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">sed -i &#39;s/PermitRootLogin yes/PermitRootLogin no/&#39; /etc/ssh/sshd_config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">sed -i &#39;s/#PermitRootLogin prohibit-password/PermitRootLogin no/&#39; /etc/ssh/sshd_config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">sed -i &#39;s/PermitRootLogin prohibit-password/PermitRootLogin no/&#39; /etc/ssh/sshd_config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">sed -i &#39;s/#PasswordAuthentication yes/PasswordAuthentication no&#39; /etc/ssh/sshd_config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">sed -i &#39;s/PasswordAuthentication yes/PasswordAuthentication no&#39; /etc/ssh/sshd_config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">sed -i &#39;s/#Port 22/Port 2222/&#39; /etc/ssh/sshd_config</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">systemctl restart sshd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span>- <span class="l">systemctl enable sshd</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">package_update</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">package_upgrade</span><span class="p">:</span><span class="w"> </span><span class="kc">true</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="c"># Reboot after package upgrades</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w"></span><span class="nt">power_state</span><span class="p">:</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">mode</span><span class="p">:</span><span class="w"> </span><span class="l">reboot</span><span class="w">
+</span></span></span><span class="line"><span class="cl"><span class="w">  </span><span class="nt">message</span><span class="p">:</span><span class="w"> </span><span class="s2">&#34;Rebooting after package upgrades&#34;</span><span class="w">
+</span></span></span></code></pre></div>
       </div></div>
 
   
