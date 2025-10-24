@@ -104,10 +104,15 @@ pagination.pagerSize = 5
           identifier = "about"
           name = "About"
           url = "/posts/about"
-#        [[languages.en.menu.main]]
-#          identifier = "showcase"
-#          name = "Showcase"
-#          url = "/showcase"
+        [[languages.en.menu.main]]
+          identifier = "music"
+          name = "Check my music!"
+          url = "/music"
+        [[languages.en.menu.main]]
+          identifier = "soundcloud"
+          parent = "music"
+          name = "SoundCloud"
+          url = "https://soundcloud.com/lucentdnb"
 
 [module]
   # this is needed when you fetch the theme as a submodule to your repo.
