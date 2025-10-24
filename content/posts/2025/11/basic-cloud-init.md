@@ -1,16 +1,14 @@
 +++
-title = "Basic Cloud Init"
+title = "Basic Cloud-Init script for most VPSs"
 date = "2025-10-24T19:16:01-04:00"
 #dateFormat = "2006-01-02" # This value can be configured for per-post date formatting
-author = ""
-authorTwitter = "" #do not include @
-cover = ""
-tags = ["", ""]
-keywords = ["", ""]
+author = "Ema"
+tags = ["tech-projects", "automation"]
+keywords = ["yaml", "cloud"]
 description = ""
 showFullContent = false
 readingTime = false
-hideComments = false
+hideComments = true
 draft = true
 +++
 
