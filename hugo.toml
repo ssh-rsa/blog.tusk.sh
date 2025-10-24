@@ -105,12 +105,7 @@ pagination.pagerSize = 5
           name = "About"
           url = "/posts/about"
         [[languages.en.menu.main]]
-          identifier = "music"
-          name = "Check my music!"
-          url = "/music"
-        [[languages.en.menu.main]]
           identifier = "soundcloud"
-          parent = "music"
           name = "SoundCloud"
           url = "https://soundcloud.com/lucentdnb"
 
