@@ -7,6 +7,7 @@ tags = ["about me"]
 showFullContent = true
 readingTime = false
 hideComments = false
+draft = true
 +++
 
 {{< image src="/images/ema_selfie.jpg" alt="A selfie!" position="center" style="border-radius: 8px; width: 50%; height: auto;" >}}
